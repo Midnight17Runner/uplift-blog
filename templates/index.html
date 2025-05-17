@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Uplift Blog</title>
+    <meta charset="UTF-8">
+    <title>Uplift Blog</title>
 </head>
 <body>
-  <h1>📰 Welcome to Uplift Blog</h1>
-  <ul>
-    {% for article in articles %}
-      <li><a href="{{ url_for('view_article', filename=article.filename) }}">{{ article.title }}</a></li>
-    {% endfor %}
-  </ul>
+    <h1>🌱 Welcome to Uplift Blog</h1>
+    <hr>
+    {% if articles %}
+        {% for title, content in articles %}
+            <div style="margin-bottom: 30px;">
+                <h2><a href="{{ url_for('view_article', title=title) }}">{{ title }}</a></h2>
+                <p>{{ content[:200] }}...</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No articles yet. Check back soon!</p>
+    {% endif %}
 </body>
 </html>
