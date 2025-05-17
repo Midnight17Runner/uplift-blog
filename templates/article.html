@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Article</title>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
 </head>
 <body>
-  <a href="{{ url_for('index') }}">⬅ Back to Home</a>
-  <hr>
-  {{ content | safe }}
+    <a href="{{ url_for('index') }}">← Back to Home</a>
+    <hr>
+    <h1>{{ title }}</h1>
+    <div>{{ content | safe }}</div>
 </body>
 </html>
