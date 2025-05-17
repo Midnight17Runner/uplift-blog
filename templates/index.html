@@ -10,7 +10,7 @@
     {% if articles %}
         {% for title, content in articles %}
             <div style="margin-bottom: 30px;">
-                <h2><a href="{{ url_for('view_article', title=title) }}">{{ title }}</a></h2>
+                <a href="{{ url_for('view_article', filename=title) }}">Read more</a>
                 <p>{{ content[:200] }}...</p>
             </div>
         {% endfor %}
