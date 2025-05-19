@@ -2,20 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Uplift Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uplift Daily</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🌱 Welcome to Uplift Blog</h1>
-    <hr>
-    {% if articles %}
-        {% for title, content in articles %}
-            <div style="margin-bottom: 30px;">
-                <a href="{{ url_for('view_article', filename='sample_article') }}">Read more</a>
-                <p>{{ content[:200] }}...</p>
-            </div>
-        {% endfor %}
-    {% else %}
-        <p>No articles yet. Check back soon!</p>
-    {% endif %}
+    <header>
+        <h1>Welcome to Uplift Daily</h1>
+        <p>Your daily dose of health, wellness & motivation</p>
+    </header>
+    <main>
+        <section id="articles">
+            <h2>Recent Articles</h2>
+            <ul>
+                <li><a href="articles/sample-article.html">Sample Article</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Uplift Daily. All rights reserved.</p>
+    </footer>
 </body>
 </html>
